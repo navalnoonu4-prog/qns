@@ -104,12 +104,140 @@
 
 # 12 Password Validation
 
-ps=input("ENTER PASSWORD:")
-count=0
-for i in ps:
-    if i in "0123456789":
-        count+=1
-if len(ps)>=8 and count>0:
-    print("valid password")
-else:
-    print("invalid password")
+# ps=input("ENTER PASSWORD:")
+# count=0
+# for i in ps:
+#     if i in "0123456789":
+#         count+=1
+# if len(ps)>=8 and count>0:
+#     print("valid password")
+# else:
+#     print("invalid password")
+
+# 13 Number List Processor
+
+# numbers=[]
+# for i in range(10):
+#     n=int(input("enter number:"))
+#     numbers.append(n)
+# positive=[]
+# negative=[]
+# even=[]
+# odd=[]
+# for x in numbers:
+#     if x>0:
+#         positive.append(x)
+#     elif x<0:
+#         negative.append(x)
+#     if x%2==0:
+#         even.append(x)
+#     else:
+#         odd.append(x)
+# print("positive Numbers:",positive)
+# print("Negative Numbers:",negative)
+# print("Even Numbers:",even)
+# print("ODD numbers:",odd)
+
+# 14 Tuple Student Marks
+
+# marks=(34,56,78,56,45)
+
+# count=0
+# print("total Marks:",sum(marks))
+# print("Average:",sum(marks)/len(marks))
+# print("highest marks:",max(marks))
+# print("Lowest mark:",min(marks))
+
+# for i in marks:
+#     if i>=75:
+#         count+=1
+# print("student above 75 Marks:",count)
+
+# 15 Bus Ticket Booking System
+
+# available=5
+# booked=0
+
+# while True:
+#     print("1. View available Seats.")
+#     print("2. Book ticket.")
+#     print("3. Cancel Ticket")
+#     print("4. exit")
+#     ch=int(input("Enter your choice(1-4): "))
+    
+#     if ch==1:
+#         print("Available seats:",available)
+#     elif ch==2:
+#         if available>0:
+#             available-=1
+#             booked+=1
+#             print("Booking Confirmed..")
+#             print("Remaining seats:",available)
+#         else:
+#             print("no seats available...")
+
+#     elif ch==3:
+#         if booked>0:
+#             booked-=1
+#             available+=1
+#             print("Ticket cancelation Confirmed..")
+#             print("remaining seats:",available)
+#         else:
+#             print("cancelation Not available...")        
+#     elif ch==4:
+#         print("thank your for your booking...")
+#         break
+#     else:
+#         print("invalid input")
+        
+
+# 16 Online Shopping Cart
+
+products = {
+"Laptop": 50000,
+"Phone": 20000,
+"Mouse": 1000
+}
+
+cart={}
+while True:
+    print("--Shoping Cart--")
+    print("1. add product")
+    print("2. Remove product")
+    print("3. View cart")
+    print("4. Total")
+    print("5. exit")
+    ch=int(input("enter your choice(1-5):"))
+    if ch==1:
+       print("available products")
+       print(products)
+
+       name=input("enter product name:")
+       if name in products:
+           cart[name]=products[name]
+           print("Added to cart")
+       else:
+           print("Product Not available")
+
+    elif ch==2:
+        name=input("enter product to remove:")
+        if name in cart:
+            del cart[name]
+            print("Product removed..")
+
+    elif ch==3:
+        for product,rate in cart.items():
+            print(product,":",rate)
+    elif ch==4:
+        total=0
+        for price in cart.values():
+            total+=price
+        print("Total amount:",total)
+
+    elif ch==5:
+        print("Thank You for shopping..")
+        break
+    else:
+        print("Invalid choice")
+
+
